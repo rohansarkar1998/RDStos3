@@ -21,12 +21,11 @@ mydb = pymysql.connect(host=dbHost, user=dbUser, password=dbPass, database=dbNam
 mycorsor = mydb.cursor()
 mycorsor.execute("select * from city")
 name = mycorsor.fetchall()
-for i in name:
-    print(i)
+
 
 
 field = ['Id', 'Name', 'Countrycode', 'Dist', 'Population']
-filename = 'D:\AWS\City.csv'
+filename = 'City.csv'
 with open(filename, 'w', encoding='utf8', newline='') as csvfile:
     csvwriter = csv.writer(csvfile)
     csvwriter.writerow(field)
